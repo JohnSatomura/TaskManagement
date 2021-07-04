@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TaskManagement
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// IndidualTaskWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IndidualTaskWindow : Window
     {
-        public MainWindow()
+        public IndidualTaskWindow()
         {
             InitializeComponent();
-        }
-
-        private void DisplayIndidualTaskWindow(object sender, RoutedEventArgs e)
-        {
-            Window SubWindow = new IndidualTaskWindow();
-            SubWindow.Show();
         }
     }
 }

@@ -13,3 +13,5 @@ C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\TaskManagement.csproj.CoreCompileInputs.cache
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\TaskManagement.exe
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\TaskManagement.pdb
+C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\IndidualTaskWindow.g.cs
+C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\IndidualTaskWindow.baml
