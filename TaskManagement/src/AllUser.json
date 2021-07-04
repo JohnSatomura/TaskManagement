@@ -1,0 +1,12 @@
+{
+    "user":[
+        {
+            "username":"Alice",
+            "DataSource":"FilePath"
+        },
+        {
+            "username": "Bob",
+            "DataSource":"FilePath"
+        }
+    ]
+}

@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="個人タスク" Height="450" Width="800">
     <Grid>
+        <Label x:Name="DisplayUserName" Content="" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Height="30" Width="175"/>
+        <DataGrid x:Name="TaskTable" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="335" Margin="25,60,0,0" VerticalAlignment="Top" Width="730" BeginningEdit="TaskTable_SelectionChanged">
+ 
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="進捗">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Checked2}"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
         
     </Grid>
 </Window>

@@ -1,0 +1,24 @@
+{
+  "tasks":[
+    {
+    "taskname":"adfsa",
+    "deadline": "yyyy-mm-dd",
+    "details": "Folder/Path",
+    "users": [
+       {"username": "Alice", "progress": "1", "comment": "hoge"},
+       {"username": "Bob", "progress": "1", "comment": "fuga"},
+       {"username": "Carol", "progress": "0", "comment": "piyo"} 
+    ]
+    },
+    {
+    "taskname":"bfds",
+    "deadline": "yyyy-mm-dd",
+    "details": "Folder/Path",
+    "users": [
+       {"username": "Alice", "progress": "1", "comment": "hoge"},
+       {"username": "Bob", "progress": "1", "comment": "fuga"},
+       {"username": "Carol", "progress": "0", "comment": "piyo"} 
+    ]
+    }
+  ]
+}

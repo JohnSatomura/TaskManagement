@@ -1,0 +1,17 @@
+[
+  {
+    "TaskName": "Task1",
+    "DeadLine": "yyyy-mm-dd",
+    "Progress": "1",
+    "Comment": "hoge",
+    "Detail": "C:\\Users\\hage\\vmlogs"
+  },
+  {
+    "TaskName": "task2",
+    "DeadLine": "yyyy-mm-dd",
+    "Progress": "1",
+    "Comment": "hoge",
+    "Detail": "C:\\Users\\hage\\Documents"
+  }
+]
+
