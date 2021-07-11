@@ -1,0 +1,26 @@
+﻿<Window x:Class="TaskManagement.MakeNewTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagement"
+        mc:Ignorable="d"
+        Title="MakeNewTaskWindow" Height="436.4" Width="368.2">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="182*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="登録" HorizontalAlignment="Left" Margin="59,370,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="Register_AddNewTask"/>
+        <TextBox x:Name="TaskNameBox" HorizontalAlignment="Left" Height="23" Margin="95,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="課題名" HorizontalAlignment="Left" Margin="35,32,0,0" VerticalAlignment="Top" Height="25" Width="63"/>
+        <Label Content="詳細パス" HorizontalAlignment="Left" Margin="44,244,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="締め切り" HorizontalAlignment="Left" Margin="35,85,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="コメント" HorizontalAlignment="Left" Margin="35,144,0,0" VerticalAlignment="Top" Width="50"/>
+        <TextBox x:Name="CommentBox" HorizontalAlignment="Left" Height="57" Margin="90,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="DeadLineDatePicker" SelectedDateFormat="Long" SelectedDate="3/23/09" DisplayDateStart="1/01/09" DisplayDateEnd="12/31/09" FirstDayOfWeek="Monday" Grid.ColumnSpan="2" Margin="90,87,75.6,292.2"/>
+        <TextBox x:Name="PathBox" HorizontalAlignment="Left" Height="22" Margin="95,248,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <Button Content="参照" Grid.Column="1" HorizontalAlignment="Left" Margin="69,248,0,0" VerticalAlignment="Top" Width="75" Click="Show_FolderDialog"/>
+
+    </Grid>
+</Window>

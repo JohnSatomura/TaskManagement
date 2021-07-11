@@ -29,6 +29,7 @@ namespace TaskManagement
         {
             Window SubWindow = new IndidualTaskWindow();
             SubWindow.Show();
+            this.Close();
         }
     }
 }

@@ -2,16 +2,16 @@
   {
     "TaskName": "Task1",
     "DeadLine": "yyyy-mm-dd",
-    "Progress": "1",
+    "Progress": "true",
     "Comment": "hoge",
-    "Detail": "C:\\Users\\hage\\vmlogs"
+    "Detail": "C:\\Users\\hage"
   },
   {
     "TaskName": "task2",
     "DeadLine": "yyyy-mm-dd",
-    "Progress": "1",
+    "Progress": "true",
     "Comment": "hoge",
-    "Detail": "C:\\Users\\hage\\Documents"
+    "Detail": "C:\\Users\\hage\\Documentsaaaaaaaaaaa"
   }
 ]
 

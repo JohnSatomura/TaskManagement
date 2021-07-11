@@ -8,19 +8,22 @@
         Title="個人タスク" Height="450" Width="800">
     <Grid>
         <Label x:Name="DisplayUserName" Content="" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Height="30" Width="175"/>
-        <DataGrid x:Name="TaskTable" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="335" Margin="25,60,0,0" VerticalAlignment="Top" Width="730" BeginningEdit="TaskTable_SelectionChanged">
- 
+        <DataGrid x:Name="TaskTable" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="335" Margin="25,60,0,0" VerticalAlignment="Top" Width="730" BeginningEdit="TaskTable_BeginningEdit">
+
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="進捗">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox IsChecked="{Binding Checked2}"  />
+                            <CheckBox IsChecked="{Binding Progress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="名前" Width="100" Binding="{Binding TaskName}" />
+                <DataGridTextColumn Header="締め切り" Width="80" Binding="{Binding DeadLine}" />
+                <DataGridTextColumn Header="コメント" Width="90" Binding="{Binding Comment}" />
+                <DataGridTextColumn Header="詳細" Width="300" Binding="{Binding Detail}" />
             </DataGrid.Columns>
-            
         </DataGrid>
-        
+        <Button Content="新規タスク" HorizontalAlignment="Left" Margin="655,10,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="Show_AddNewTaskWindow"/>
     </Grid>
 </Window>

@@ -16,19 +16,10 @@ using System.IO;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Controls.Primitives;
-
+using System.Collections.ObjectModel;
 
 namespace TaskManagement
 {
-    class AllTask
-    {
-        public string TaskName { get; set; }
-        public string DeadLine { get; set; }
-        public string Progress { get; set; }
-        public string Comment { get; set; }
-        public string Detail { get; set; }
-    }
-
     /// <summary>
     /// IndidualTaskWindow.xaml の相互作用ロジック
     /// </summary>
@@ -37,59 +28,47 @@ namespace TaskManagement
         public IndidualTaskWindow()
         {
             InitializeComponent();
-            DisplayUserName.Content = "しねー－";
 
-            string FilePath = "./src/Alice.json";
-            AllTask[] LoadData = new AllTask[0]; //todo ここの0の意味がわからん 要素数じゃないの？
-            string UserData = GetJsonData(FilePath);
-            LoadData = JsonSerializer.Deserialize<AllTask[]>(UserData);
+            DisplayUserName.Content = TaskManagement.Properties.Settings.Default.UserName;
 
+            
+            Task[] LoadData = new Task[0]; //todo ここの0の意味がわからん 要素数じゃないの？
+            LoadData = JsonSerializer.Deserialize<Task[]>(App.Load_TaskData());
+            var data = new ObservableCollection<Task>();
 
             var table = new DataTable();
-            
-            table.Columns.Add("作業名");
-            table.Columns.Add("締め切り");
-            table.Columns.Add("コメント");
-            table.Columns.Add("詳細");
-
-            foreach (AllTask item in LoadData)
+            foreach (Task item in LoadData)
             {
-                var columns = table.NewRow();
-                
-                //item.Progress;
-                columns[0] = item.TaskName;
-                columns[1] = item.DeadLine;
-                columns[2] = item.Comment;
-                columns[3] = item.Detail;
-                
-                table.Rows.Add(columns);
-                
+                data.Add(new Task
+                {
+                    Progress = item.Progress,
+                    TaskName = item.TaskName,
+                    DeadLine = item.DeadLine,
+                    Comment = item.Comment,
+                    Detail = item.Detail
+                });
             }
-            this.DataContext = table;
+            this.TaskTable.ItemsSource = data;
         }
 
 
         /// <summary>
         /// 行またセルはが編集モードに切り替わる前に発生します。
         /// </summary>
-        private void TaskTable_SelectionChanged(object sender, DataGridBeginningEditEventArgs e)
+        /// // todo 以下実行前にパスが存在するか確認しろ 
+        /// 存在しないならダイアログを出してあるところまで開く
+        private void TaskTable_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
         {
             switch (e.Column.Header.ToString())
             {
-                case "進捗":  //fall through
-
                 case "コメント":
-                    Console.WriteLine("編集可能");
+                    MessageBox.Show("aaa");
                     break;
                 case "詳細":
-                    string FilePath = "./src/Alice.json";
-                    AllTask[] LoadData = new AllTask[0]; 
-                    string UserData = GetJsonData(FilePath);
-                    LoadData = JsonSerializer.Deserialize<AllTask[]>(UserData);
-                    
-                    System.Windows.MessageBox.Show(LoadData[e.Row.GetIndex()].Detail.ToString());
-                    //System.Windows.MessageBox.Show(e.Column.DisplayIndex.ToString());
-                    Process.Start(LoadData[e.Row.GetIndex()].Detail.ToString());
+                    DataGrid dg = sender as DataGrid;
+                    Task row = (Task)dg.SelectedItems[0];
+                    //System.Windows.MessageBox.Show(dg.SelectedItems[0].ToString());
+                    Process.Start(row.Detail.ToString());
                     e.Cancel = true;    //編集をキャンセル
                     break;
                 default:
@@ -99,21 +78,19 @@ namespace TaskManagement
 
         }
 
-
         /// <summary>
-        /// ファイルパスを渡すと中身をstringで持ってくる
+        /// 変更したデータのアップデート
         /// </summary>
-        public static string GetJsonData(string FilePath)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Show_AddNewTaskWindow(object sender, RoutedEventArgs e)
         {
-            string CharCode = "utf-8";  //charset more better?
-            StreamReader sr = new StreamReader(FilePath, Encoding.GetEncoding(CharCode));
-            string jsonData = sr.ReadToEnd();
-            sr.Close();
-            return jsonData;
+            Window SubWindow = new MakeNewTaskWindow();
+            //App.AddNewTask("タスク2", "199xmmdd", "できた", "なし");
+            SubWindow.Show();
         }
-
 
     }
 }
 
-//System.Windows.MessageBox.Show()
+//System.Windows.MessageBox.Show();
