@@ -27,31 +27,16 @@ namespace TaskManagement
             
         }
 
-        private void Show_FolderDialog(object sender, RoutedEventArgs e)
-        {
-            using (var cofd = new CommonOpenFileDialog()
-            {
-                Title = "フォルダを選択してください",
-                InitialDirectory = @"C:\Users",
-                // フォルダ選択モードにする
-                IsFolderPicker = true,
-            })
-            {
-                if (cofd.ShowDialog() != CommonFileDialogResult.Ok)
-                {
-                    return;
-                }
-
-                // FileNameで選択されたフォルダを取得する
-                System.Windows.MessageBox.Show($"{cofd.FileName}を選択しました");
-                PathBox.Text = cofd.FileName;
-            }
-        }
 
         private void Register_AddNewTask(object sender, RoutedEventArgs e)
         {
             App.AddNewTask(TaskNameBox.Text, DeadLineDatePicker.Text, CommentBox.Text, PathBox.Text);
             this.Close();
+        }
+
+        private void Ref_FolderDialog(object sender, RoutedEventArgs e)
+        {
+            PathBox.Text = App.Show_FolderDialog();
         }
     }
 }

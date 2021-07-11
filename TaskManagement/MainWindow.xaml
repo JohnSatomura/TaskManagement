@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="個人タスク" HorizontalAlignment="Left" Margin="435,245,0,0" VerticalAlignment="Top" Width="170" Height="65" Click="DisplayIndidualTaskWindow"/>
+        <Button Content="個人タスク" HorizontalAlignment="Left" Margin="435,245,0,0" VerticalAlignment="Top" Width="170" Height="65" Click="Display_IndidualTaskWindow"/>
+        <Button Content="設定" HorizontalAlignment="Left" Margin="105,301,0,0" VerticalAlignment="Top" Width="225" Height="54" Click="Display_SettingWindow"/>
 
     </Grid>
 </Window>

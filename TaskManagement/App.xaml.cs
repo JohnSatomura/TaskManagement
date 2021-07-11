@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Text.Json;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace TaskManagement
 {
@@ -49,5 +50,26 @@ namespace TaskManagement
 
             //MessageBox.Show(jsonString);
         }
+
+        public static string Show_FolderDialog()
+        {
+            using (var cofd = new CommonOpenFileDialog()
+            {
+                Title = "フォルダを選択してください",
+                InitialDirectory = @"C:\Users",
+                // フォルダ選択モードにする
+                IsFolderPicker = true,
+            })
+            {
+                if (cofd.ShowDialog() != CommonFileDialogResult.Ok)
+                {
+                    return "なし";
+                }
+
+                return cofd.FileName;
+            }
+        }
+
+
     }
 }

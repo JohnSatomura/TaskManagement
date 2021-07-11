@@ -25,10 +25,17 @@ namespace TaskManagement
             InitializeComponent();
         }
 
-        private void DisplayIndidualTaskWindow(object sender, RoutedEventArgs e)
+        private void Display_IndidualTaskWindow(object sender, RoutedEventArgs e)
         {
             Window SubWindow = new IndidualTaskWindow();
             SubWindow.Show();
+            this.Close();
+        }
+
+        private void Display_SettingWindow(object sender, RoutedEventArgs e)
+        {
+            Window SettingWindow = new SettingWindow();
+            SettingWindow.Show();
             this.Close();
         }
     }

@@ -61,3 +61,5 @@ C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\bin\Debug\
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\bin\Debug\Microsoft.WindowsAPICodePack.xml
 C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\SettingWindow.g.cs
+C:\Users\hage\Source\Repos\JohnSatomura\TaskManagement\TaskManagement\obj\Debug\SettingWindow.baml

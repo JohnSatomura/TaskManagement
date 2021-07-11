@@ -20,7 +20,7 @@
         <TextBox x:Name="CommentBox" HorizontalAlignment="Left" Height="57" Margin="90,148,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
         <DatePicker x:Name="DeadLineDatePicker" SelectedDateFormat="Long" SelectedDate="3/23/09" DisplayDateStart="1/01/09" DisplayDateEnd="12/31/09" FirstDayOfWeek="Monday" Grid.ColumnSpan="2" Margin="90,87,75.6,292.2"/>
         <TextBox x:Name="PathBox" HorizontalAlignment="Left" Height="22" Margin="95,248,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
-        <Button Content="参照" Grid.Column="1" HorizontalAlignment="Left" Margin="69,248,0,0" VerticalAlignment="Top" Width="75" Click="Show_FolderDialog"/>
+        <Button x:Name="RefBox" Content="参照" Grid.Column="1" HorizontalAlignment="Left" Margin="69,248,0,0" VerticalAlignment="Top" Width="75" Click="Ref_FolderDialog"/>
 
     </Grid>
 </Window>

@@ -29,7 +29,7 @@ namespace TaskManagement
         {
             InitializeComponent();
 
-            DisplayUserName.Content = TaskManagement.Properties.Settings.Default.UserName;
+            DisplayUserName.Content = Properties.Settings.Default.UserName;
 
             
             Task[] LoadData = new Task[0]; //todo ここの0の意味がわからん 要素数じゃないの？
